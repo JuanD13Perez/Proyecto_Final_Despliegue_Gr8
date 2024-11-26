@@ -1,0 +1,58 @@
+# Nombre del paquete
+package_name: modelo-heart
+
+# Archivos de datos
+train_data_file: heart_analytics_train.csv
+test_data_file: heart_analytics_test.csv
+
+# Variables
+# Objetivo
+target: DEATH_EVENT
+
+features:
+  - age
+  - creatinine_phosphokinase
+  - ejection_fraction
+  - serum_creatinine
+  - serum_sodium
+  - sex
+  - time
+
+temp_features:
+ - smoking
+ - serum_sodium
+ - high_blood_pressure
+ - ejection_fraction
+ - diabetes
+ - anaemia
+
+
+# pipelines
+pipeline_name: modelo-heart
+pipeline_save_file: modelo-heart-output
+
+
+# fracción del conjunto de prueba
+test_size: 0.33
+
+# semilla
+random_state: 0
+
+# hiperparámetros del modelo 
+learning_rate: 0.1
+max_depth: 1
+use_label_encoder: False
+eval_metric: 'logloss'
+
+# variables a mapear
+#qual_vars:
+#  - Attrition_Flag
+
+# 
+#categorical_vars:
+#  - Attrition_Flag
+
+# mapeo de variables
+#qual_mappings:
+#  Attrited Customer: 1
+#  Existing Customer: 0
